@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tằm - Trà ngon đậm vị, từ tằm gửi vị</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+                <!-- Cocoon/Pod shape -->
+                <g id="cocoon">
+                    <path d="M 50 15 Q 65 25 68 45 Q 70 60 68 80 Q 65 95 50 105 Q 35 95 32 80 Q 30 60 32 45 Q 35 25 50 15 Z"
+                          fill="none" stroke="#C4859E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- Horizontal lines (wrapped effect) -->
+                    <line x1="35" y1="35" x2="65" y2="35" stroke="#C4859E" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="32" y1="50" x2="68" y2="50" stroke="#C4859E" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="32" y1="65" x2="68" y2="65" stroke="#C4859E" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="35" y1="80" x2="65" y2="80" stroke="#C4859E" stroke-width="2" stroke-linecap="round"/>
+                    <!-- Leaf/sprout on top -->
+                    <path d="M 50 10 Q 48 5 50 0" stroke="#C4859E" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    <path d="M 48 8 Q 45 3 42 2" stroke="#C4859E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    <path d="M 52 8 Q 55 3 58 2" stroke="#C4859E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                </g>
+                <!-- Bottom drops -->
+                <circle cx="50" cy="115" r="3" fill="#C4859E" opacity="0.6"/>
+            </svg>
+            <span class="logo-text">TẰM</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#menu">Thực Đơn</a></li>
+            <li><a href="#drinks">Thức Uống</a></li>
+            <li><a href="#contact">Liên Hệ</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+        <h1 class="hero-title">
+            <p>
+                <span class="text-gradient">Trà ngon</span>
+                <span class="text-metallic"> đậm vị</span>
+            </p>
+            <p><span class="text-gradient"> từ tằm gửi vị</span></p>
+        </h1>
+        <p class="hero-subtitle">Trải nghiệm thức uống tương lai ngay hôm nay</p>
+
+        <!-- 3D Glass Container -->
+        <div class="glass-container">
+            <div class="glass-liquid"></div>
+            <div class="glass-reflection"></div>
+            <div class="glass-bubble glass-bubble-1"></div>
+            <div class="glass-bubble glass-bubble-2"></div>
+            <div class="glass-bubble glass-bubble-3"></div>
+        </div>
+
+        <button class="cta-button">
+            <span class="button-text">Thưởng Thức</span>
+            <span class="button-glow" aria-hidden="true"></span>
+        </button>
+    </div>
+</section>
+
+<!-- Interactive Menu -->
+<section id="menu" class="menu-section">
+    <div class="menu-header">
+        <h2>Thực Đơn Đặc Biệt</h2>
+        <p>Hương vị độc đáo từ tương lai</p>
+    </div>
+
+    <div class="menu-grid">
+        <!-- Product 1 -->
+        <div class="menu-card">
+            <div class="card-glow"></div>
+            <div class="card-content">
+                <div class="product-icon strawberry-icon">🍓</div>
+                <h3>Strawberry Quantum</h3>
+                <p>Sữa dâu lắc 3D với các hạt trân châu thủy tinh lơ lửng</p>
+                <div class="price">69.000₫</div>
+            </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="menu-card">
+            <div class="card-glow"></div>
+            <div class="card-content">
+                <div class="product-icon espresso-icon">☕</div>
+                <h3>White Pearl Espresso</h3>
+                <p>Cà phê sữa sử dụng bọt kem trắng ngọc mịn màng</p>
+                <div class="price">59.000₫</div>
+            </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="menu-card">
+            <div class="card-glow"></div>
+            <div class="card-content">
+                <div class="product-icon soda-icon">🌸</div>
+                <h3>Rose Glow Soda</h3>
+                <p>Soda hoa hồng phát sáng nhẹ với bọt khoáng tự nhiên</p>
+                <div class="price">49.000₫</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Drink List -->
+<section id="drinks" class="drink-section">
+    <div class="drink-content">
+        <h2>Danh Sách Thức Uống</h2>
+        <p>Chọn thức uống phù hợp với tâm trạng của bạn trong ngày</p>
+
+        <div class="drink-grid">
+            <article class="drink-card">
+                <div class="drink-badge">Best seller</div>
+                <div class="drink-icon">🧋</div>
+                <h3>Trà Sữa Tằm Hồng</h3>
+                <p>Trà sữa béo mịn với lớp kem hồng nhẹ, vị ngọt thanh dễ uống.</p>
+                <ul class="drink-meta">
+                    <li>Size M</li>
+                    <li>Ít đá</li>
+                    <li>45.000₫</li>
+                </ul>
+            </article>
+
+            <article class="drink-card">
+                <div class="drink-badge">Mát lạnh</div>
+                <div class="drink-icon">🍓</div>
+                <h3>Dâu Sữa Spark</h3>
+                <p>Sữa dâu lắc mịn, thơm vị trái cây tươi, hợp cho buổi chiều thư giãn.</p>
+                <ul class="drink-meta">
+                    <li>Size L</li>
+                    <li>Không đường</li>
+                    <li>49.000₫</li>
+                </ul>
+            </article>
+
+            <article class="drink-card">
+                <div class="drink-badge">Năng lượng</div>
+                <div class="drink-icon">☕</div>
+                <h3>Espresso Kem Muối</h3>
+                <p>Cà phê đậm vị kết hợp lớp kem muối béo nhẹ, cân bằng giữa đắng và ngọt.</p>
+                <ul class="drink-meta">
+                    <li>Size S</li>
+                    <li>Ít ngọt</li>
+                    <li>39.000₫</li>
+                </ul>
+            </article>
+
+            <article class="drink-card">
+                <div class="drink-badge">Thanh mát</div>
+                <div class="drink-icon">🍵</div>
+                <h3>Matcha Sương Sớm</h3>
+                <p>Matcha Nhật mịn màng, hậu vị dịu, phù hợp khi bạn cần một chút bình yên.</p>
+                <ul class="drink-meta">
+                    <li>Size M</li>
+                    <li>Chuẩn vị</li>
+                    <li>55.000₫</li>
+                </ul>
+            </article>
+
+            <article class="drink-card">
+                <div class="drink-badge">Tươi mới</div>
+                <div class="drink-icon">🍍</div>
+                <h3>Việt Quất Nhiệt Đới</h3>
+                <p>Nước ép trái cây kết hợp soda nhẹ, mang lại cảm giác sảng khoái tức thì.</p>
+                <ul class="drink-meta">
+                    <li>Size L</li>
+                    <li>Ít đá</li>
+                    <li>42.000₫</li>
+                </ul>
+            </article>
+
+            <article class="drink-card">
+                <div class="drink-badge">Signature</div>
+                <div class="drink-icon">🌸</div>
+                <h3>Rose Glow Soda</h3>
+                <p>Soda hoa hồng dịu nhẹ với bọt mịn và hương thơm thanh tao.</p>
+                <ul class="drink-meta">
+                    <li>Size M</li>
+                    <li>Không caffeine</li>
+                    <li>47.000₫</li>
+                </ul>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="contact" class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Tằm</h3>
+            <p>Trà ngon đậm vị, từ tằm gửi vị</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Liên Hệ</h3>
+            <p>Email: hello@tam.vn</p>
+            <p>Phone: +84 9 XXXX XXXX</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Mạng Xã Hội</h3>
+            <div class="social-icons">
+                <a href="#" class="social-bubble">f</a>
+                <a href="#" class="social-bubble">i</a>
+                <a href="#" class="social-bubble">t</a>
+                <a href="#" class="social-bubble">🔗</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Tằm - Trà Ngon Đậm Vị. Tất cả quyền được bảo lưu.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
