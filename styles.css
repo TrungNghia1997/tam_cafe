@@ -976,6 +976,12 @@ body {
 .leaves-toggle-btn:hover .leaves-toggle-icon {
     transform: rotate(20deg) scale(1.15);
 }
+.text-decoration-none{
+    text-decoration: none;
+}
+.text-decoration-none:hover{
+    text-decoration: none;
+}
 
 @media (max-width: 480px) {
     .leaves-toggle-btn {
@@ -984,4 +990,4 @@ body {
         padding: 7px 14px;
         font-size: 0.78rem;
     }
-}
+}
