@@ -4,246 +4,701 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tằm - Trà ngon đậm vị, từ tằm gửi vị</title>
+    <title>TẰM - Thêu Hương Dệt Vị | Trà Ngon & Cà Phê Mộc Dân Dã</title>
+    <meta name="description" content="Tằm - Không gian trà ngon đậm vị và cà phê phin mộc truyền thống. Nơi chắt chiu từng giọt mộc, thêu hương dệt trọn vị đất trời Việt Nam.">
+    <link rel="icon" type="image/png" href="assets/logo-badge.png">
+    
+    <!-- Google Fonts: Nghệ thuật chữ truyền thống kết hợp sự trang nhã -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <!-- Mulberry Leaves Canvas (Hiệu ứng lá tằm rơi) -->
+    <!-- Canvas Hiệu ứng Lá Dâu Tằm & Tơ Vàng Rơi Tự Nhiên -->
     <canvas id="mulberry-leaves-canvas" class="mulberry-leaves-canvas" aria-hidden="true"></canvas>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="/" class="text-decoration-none">
-                <div class="logo">
-                    <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Cocoon/Pod shape -->
-                        <g id="cocoon">
-                            <path
-                                d="M 50 15 Q 65 25 68 45 Q 70 60 68 80 Q 65 95 50 105 Q 35 95 32 80 Q 30 60 32 45 Q 35 25 50 15 Z"
-                                fill="none" stroke="#C4859E" stroke-width="2.5" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <!-- Horizontal lines (wrapped effect) -->
-                            <line x1="35" y1="35" x2="65" y2="35" stroke="#C4859E" stroke-width="2"
-                                stroke-linecap="round" />
-                            <line x1="32" y1="50" x2="68" y2="50" stroke="#C4859E" stroke-width="2"
-                                stroke-linecap="round" />
-                            <line x1="32" y1="65" x2="68" y2="65" stroke="#C4859E" stroke-width="2"
-                                stroke-linecap="round" />
-                            <line x1="35" y1="80" x2="65" y2="80" stroke="#C4859E" stroke-width="2"
-                                stroke-linecap="round" />
-                            <!-- Leaf/sprout on top -->
-                            <path d="M 50 10 Q 48 5 50 0" stroke="#C4859E" stroke-width="2" fill="none"
-                                stroke-linecap="round" />
-                            <path d="M 48 8 Q 45 3 42 2" stroke="#C4859E" stroke-width="1.5" fill="none"
-                                stroke-linecap="round" />
-                            <path d="M 52 8 Q 55 3 58 2" stroke="#C4859E" stroke-width="1.5" fill="none"
-                                stroke-linecap="round" />
-                        </g>
-                        <!-- Bottom drops -->
-                        <circle cx="50" cy="115" r="3" fill="#C4859E" opacity="0.6" />
-                    </svg>
-                    <span class="logo-text">TẰM</span>
-                </div>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#menu">Best Sellers</a></li>
-                <li><a href="#drinks">Thức Uống</a></li>
-                <li><a href="#contact">Liên Hệ</a></li>
-            </ul>
+    <!-- Top Announcement Bar (Nét mộc làng quê) -->
+    <div class="top-announcement">
+        <div class="announcement-content">
+            <span class="announcement-seal">Triện Mộc</span>
+            <span>Chắt chiu từng búp dâu non &bull; Rang mộc củi nhãn &bull; Nhỏ giọt phin truyền thống</span>
         </div>
-    </nav>
+    </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-glow"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">
-                <p>
-                    <span class="text-gradient">Trà ngon</span>
-                    <span class="text-metallic"> đậm vị</span>
+    <!-- Thanh Điều Hướng (Navigation) -->
+    <header class="navbar-wrapper">
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <a href="#" class="brand-link" title="TẰM - Thêu Hương Dệt Vị">
+                    <div class="brand-logo">
+                        <img src="assets/logo-transparent.png" alt="Logo Tằm" class="brand-img" width="46" height="58">
+                        <div class="brand-text-group">
+                            <span class="brand-name">tằm</span>
+                            <span class="brand-tagline">THÊU HƯƠNG DỆT VỊ</span>
+                        </div>
+                    </div>
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="#story" class="nav-link">Chuyện Mộc</a></li>
+                    <li><a href="#philosophy" class="nav-link">Bốn Chữ Vị</a></li>
+                    <li><a href="#signatures" class="nav-link">Món Đặc Tuyển</a></li>
+                    <li><a href="#menu" class="nav-link">Thực Đơn</a></li>
+                    <li><a href="#space" class="nav-link">Không Gian</a></li>
+                    <li><a href="#contact" class="nav-link">Ghé Quán</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="#contact" class="btn-wood-nav">
+                        <span class="btn-text">Đặt Chỗ</span>
+                        <span class="btn-stamp" aria-hidden="true">TẰM</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section: Không gian thưởng trà & cà phê mộc mạc -->
+    <section class="hero-section" id="hero">
+        <div class="hero-bg-texture" aria-hidden="true"></div>
+        <div class="hero-container">
+            <div class="hero-text-col">
+                <div class="seal-badge">
+                    <span class="seal-character">蠶</span>
+                    <span class="seal-text">MỘC BẢN &bull; THUẦN TỰ NHIÊN</span>
+                </div>
+
+                <h1 class="hero-headline">
+                    <span class="headline-sub">Thêu Hương Dệt Vị</span>
+                    <span class="headline-main">Chắt Chiu Giọt Mộc,<br><em class="headline-accent">Dệt Trọn Vị Đất Trời</em></span>
+                </h1>
+
+                <p class="hero-description">
+                    Như con tằm cần mẫn nhả tơ ươm kén vàng, <strong>Tằm</strong> gom góp tinh hoa đất trời trong từng búp non lá dâu và hạt cà phê rang củi. Chậm rãi qua phin nhôm mộc, ấm nồng trong chén đất nung — gửi trao trọn vẹn phong vị dân dã thuần khiết của người Việt.
                 </p>
-                <p><span class="text-gradient"> từ tằm gửi vị</span></p>
-            </h1>
-            <p class="hero-subtitle">Trải nghiệm thức uống tương lai ngay hôm nay</p>
 
-            <!-- 3D Glass Container -->
-            <div class="glass-container">
-                <div class="glass-liquid"></div>
-                <div class="glass-reflection"></div>
-                <div class="glass-bubble glass-bubble-1"></div>
-                <div class="glass-bubble glass-bubble-2"></div>
-                <div class="glass-bubble glass-bubble-3"></div>
-            </div>
+                <div class="hero-highlights">
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🍂</span>
+                        <div>
+                            <strong>Búp Dâu Tằm Tươi</strong>
+                            <small>Ủ men mật mía tự nhiên</small>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">☕</span>
+                        <div>
+                            <strong>Cà Phê Rang Củi</strong>
+                            <small>Mộc 100%, không tẩm ướp</small>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🏺</span>
+                        <div>
+                            <strong>Ấm Đất & Phin Nhôm</strong>
+                            <small>Giữ trọn hương vị truyền thống</small>
+                        </div>
+                    </div>
+                </div>
 
-            <button class="cta-button">
-                <span class="button-text">Thưởng Thức</span>
-                <span class="button-glow" aria-hidden="true"></span>
-            </button>
-        </div>
-    </section>
-
-    <!-- Interactive Menu -->
-    <section id="menu" class="menu-section">
-        <div class="menu-header">
-            <h2>Thực Đơn Đặc Biệt</h2>
-            <p>Hương vị độc đáo từ tương lai</p>
-        </div>
-
-        <div class="menu-grid">
-            <!-- Product 1 -->
-            <div class="menu-card">
-                <div class="card-glow"></div>
-                <div class="card-content">
-                    <div class="product-icon strawberry-icon">🍓</div>
-                    <h3>Strawberry Quantum</h3>
-                    <p>Sữa dâu lắc 3D với các hạt trân châu thủy tinh lơ lửng</p>
-                    <div class="price">69.000₫</div>
+                <div class="hero-cta-group">
+                    <a href="#signatures" class="btn-primary-craft">
+                        <span class="btn-icon">🍃</span>
+                        <span>Thưởng Thức Món Mộc</span>
+                    </a>
+                    <a href="#story" class="btn-secondary-craft">
+                        <span>Đọc Chuyện Tằm</span>
+                        <span class="arrow-right">&rarr;</span>
+                    </a>
                 </div>
             </div>
 
-            <!-- Product 2 -->
-            <div class="menu-card">
-                <div class="card-glow"></div>
-                <div class="card-content">
-                    <div class="product-icon espresso-icon">☕</div>
-                    <h3>White Pearl Espresso</h3>
-                    <p>Cà phê sữa sử dụng bọt kem trắng ngọc mịn màng</p>
-                    <div class="price">59.000₫</div>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="menu-card">
-                <div class="card-glow"></div>
-                <div class="card-content">
-                    <div class="product-icon soda-icon">🌸</div>
-                    <h3>Rose Glow Soda</h3>
-                    <p>Soda hoa hồng phát sáng nhẹ với bọt khoáng tự nhiên</p>
-                    <div class="price">49.000₫</div>
+            <div class="hero-visual-col">
+                <div class="craft-frame">
+                    <div class="craft-frame-inner">
+                        <img src="assets/hero-rustic.jpg" alt="Mẹt trà đất nung và cà phê phin mộc Tằm" class="hero-featured-img">
+                        <div class="steam-ambient" aria-hidden="true"></div>
+                        <div class="craft-overlay-tag">
+                            <span class="tag-title">Ấm Đất Nung &bull; Phin Cà Phê Mộc</span>
+                            <span class="tag-desc">Góc bình yên bên kén tằm vàng óng</span>
+                        </div>
+                    </div>
+                    <!-- Wooden Seal Floating Badge -->
+                    <div class="floating-seal">
+                        <img src="assets/logo-badge.png" alt="Dấu mộc Tằm" class="seal-img">
+                        <div class="seal-floating-text">
+                            <strong>TẰM</strong>
+                            <span>Thêu Hương Dệt Vị</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Drink List -->
-    <section id="drinks" class="drink-section">
-        <div class="drink-content">
-            <h2>Danh Sách Thức Uống</h2>
-            <p>Chọn thức uống phù hợp với tâm trạng của bạn trong ngày</p>
+    <!-- Câu Chuyện Tằm (Brand Story / Manifesto) -->
+    <section class="story-section" id="story">
+        <div class="section-container">
+            <div class="paper-scroll-wrapper">
+                <div class="paper-scroll-content">
+                    <div class="scroll-seal-top">
+                        <span class="stamp-box">GIA TRUYỀN</span>
+                    </div>
 
-            <div class="drink-grid">
-                <article class="drink-card">
-                    <div class="drink-badge">Best seller</div>
-                    <div class="drink-icon">🧋</div>
-                    <h3>Trà Sữa Tằm Hồng</h3>
-                    <p>Trà sữa béo mịn với lớp kem hồng nhẹ, vị ngọt thanh dễ uống.</p>
-                    <ul class="drink-meta">
-                        <li>Size M</li>
-                        <li>Ít đá</li>
-                        <li>45.000₫</li>
+                    <h2 class="story-title">Chuyện Con Tằm Dệt Vị Bên Hiên Xưa</h2>
+                    <p class="story-poem">
+                        &ldquo;Tằm ươm kén nhả tơ óng ả,<br>
+                        Người ươm hương dệt vị nồng nàn.<br>
+                        Bên hiên nhỏ gió lay cành dâu biếc,<br>
+                        Một chén trà mộc gác lại nỗi âu lo.&rdquo;
+                    </p>
+
+                    <div class="story-body">
+                        <p>
+                            Ở <strong>Tằm</strong>, chúng tôi không tìm kiếm sự hào nhoáng, vội vã. Cảm hứng bắt đầu từ những nong tằm ươm kén nơi làng nghề truyền thống — nơi người thợ kiên nhẫn đợi từng sợi tơ vàng óng ả rút ra từ chiếc kén mộc.
+                        </p>
+                        <p>
+                            Cũng như pha một ấm trà ngon hay pha một cữ cà phê phin, không thể giục giã. Từng giọt cà phê nhỏ xuống tí tách là từng giây phút đất trời hòa quyện; từng búp dâu tằm ủ men mật mía là từng nét thêu hương dệt vị tinh tế. Đến với Tằm là tìm về một chốn nương náu an yên, dân dã và chân phương.
+                        </p>
+                    </div>
+
+                    <div class="story-signature">
+                        <span class="sig-title">Chủ Quán Kính Ký</span>
+                        <div class="sig-stamp">
+                            <span>TẰM</span>
+                            <small>THÊU HƯƠNG DỆT VỊ</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bốn Chữ Triết Lý: MỘC - TƠ - HƯƠNG - VỊ -->
+    <section class="philosophy-section" id="philosophy">
+        <div class="section-container">
+            <div class="section-header text-center">
+                <span class="section-sub">ĐẠO MỘC NHÀ TẰM</span>
+                <h2 class="section-title">Bốn Chữ Dệt Nên Tinh Hoa</h2>
+                <div class="divider-knot" aria-hidden="true"><span>✦</span></div>
+                <p class="section-intro">
+                    Từ nguyên liệu quê nhà đến cách pha chế thủ công, mỗi thức uống tại Tằm đều đượm trọn tinh thần của bốn chữ:
+                </p>
+            </div>
+
+            <div class="philosophy-grid">
+                <!-- Card 1: MỘC -->
+                <article class="philosophy-card">
+                    <div class="phil-watermark">MỘC</div>
+                    <div class="phil-badge">Chữ Nhất</div>
+                    <h3 class="phil-title">MỘC &bull; Nguyên Bản</h3>
+                    <p class="phil-desc">
+                        Hạt cà phê Robusta đất đỏ bazan rang mộc bằng củi nhãn, không bơ, không hương liệu. Búp dâu tằm xanh non hái khi sương sớm còn đọng trên cành.
+                    </p>
+                    <ul class="phil-list">
+                        <li>Hạt cà phê tuyển chọn chín cây</li>
+                        <li>Trà thảo mộc không hóa chất</li>
                     </ul>
                 </article>
 
-                <article class="drink-card">
-                    <div class="drink-badge">Mát lạnh</div>
-                    <div class="drink-icon">🍓</div>
-                    <h3>Dâu Sữa Spark</h3>
-                    <p>Sữa dâu lắc mịn, thơm vị trái cây tươi, hợp cho buổi chiều thư giãn.</p>
-                    <ul class="drink-meta">
-                        <li>Size L</li>
-                        <li>Không đường</li>
-                        <li>49.000₫</li>
+                <!-- Card 2: TƠ -->
+                <article class="philosophy-card highlight-phil">
+                    <div class="phil-watermark">TƠ</div>
+                    <div class="phil-badge badge-accent">Chữ Nhị</div>
+                    <h3 class="phil-title">TƠ &bull; Chắt Chiu</h3>
+                    <p class="phil-desc">
+                        Cần mẫn như tằm ăn lá dâu nhả tơ ươm kén. Từng giọt phin nhỏ chậm rãi, từng ấm trà được canh đúng nhiệt nước giếng thanh khiết để dậy trọn tinh túy.
+                    </p>
+                    <ul class="phil-list">
+                        <li>Phin nhôm truyền thống giữ nhiệt</li>
+                        <li>Thời gian ủ đạt chuẩn từng cữ</li>
                     </ul>
                 </article>
 
-                <article class="drink-card">
-                    <div class="drink-badge">Năng lượng</div>
-                    <div class="drink-icon">☕</div>
-                    <h3>Espresso Kem Muối</h3>
-                    <p>Cà phê đậm vị kết hợp lớp kem muối béo nhẹ, cân bằng giữa đắng và ngọt.</p>
-                    <ul class="drink-meta">
-                        <li>Size S</li>
-                        <li>Ít ngọt</li>
-                        <li>39.000₫</li>
+                <!-- Card 3: HƯƠNG -->
+                <article class="philosophy-card">
+                    <div class="phil-watermark">HƯƠNG</div>
+                    <div class="phil-badge">Chữ Tam</div>
+                    <h3 class="phil-title">HƯƠNG &bull; Thêu Thùa</h3>
+                    <p class="phil-desc">
+                        Hương thơm mộc của hoa sen trăm cánh Tây Hồ, hoa cúc chi tiến vua, hay quả dâu tằm chín mọng lên men cùng mật mía ngọt ngào.
+                    </p>
+                    <ul class="phil-list">
+                        <li>Hương thơm thanh tao từ hoa quả sạch</li>
+                        <li>Khói trầm mộc ấm cúng lan tỏa</li>
                     </ul>
                 </article>
 
-                <article class="drink-card">
-                    <div class="drink-badge">Thanh mát</div>
-                    <div class="drink-icon">🍵</div>
-                    <h3>Matcha Sương Sớm</h3>
-                    <p>Matcha Nhật mịn màng, hậu vị dịu, phù hợp khi bạn cần một chút bình yên.</p>
-                    <ul class="drink-meta">
-                        <li>Size M</li>
-                        <li>Chuẩn vị</li>
-                        <li>55.000₫</li>
-                    </ul>
-                </article>
-
-                <article class="drink-card">
-                    <div class="drink-badge">Tươi mới</div>
-                    <div class="drink-icon">🍍</div>
-                    <h3>Việt Quất Nhiệt Đới</h3>
-                    <p>Nước ép trái cây kết hợp soda nhẹ, mang lại cảm giác sảng khoái tức thì.</p>
-                    <ul class="drink-meta">
-                        <li>Size L</li>
-                        <li>Ít đá</li>
-                        <li>42.000₫</li>
-                    </ul>
-                </article>
-
-                <article class="drink-card">
-                    <div class="drink-badge">Signature</div>
-                    <div class="drink-icon">🌸</div>
-                    <h3>Rose Glow Soda</h3>
-                    <p>Soda hoa hồng dịu nhẹ với bọt mịn và hương thơm thanh tao.</p>
-                    <ul class="drink-meta">
-                        <li>Size M</li>
-                        <li>Không caffeine</li>
-                        <li>47.000₫</li>
+                <!-- Card 4: VỊ -->
+                <article class="philosophy-card">
+                    <div class="phil-watermark">VỊ</div>
+                    <div class="phil-badge">Chữ Tứ</div>
+                    <h3 class="phil-title">VỊ &bull; Dệt Trọn</h3>
+                    <p class="phil-desc">
+                        Đắng dịu đầu lưỡi, ngọt bùi nơi cuống họng. Hậu vị đượm sâu khó phai, để lại cảm giác nhẹ nhõm, thanh thản như vừa được về lại mái nhà quê hương.
+                    </p>
+                    <ul class="phil-list">
+                        <li>Vị ngọt thanh từ mật mía & thốt nốt</li>
+                        <li>Đậm đà tình thân, ấm nồng tao nhã</li>
                     </ul>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="contact" class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Tằm</h3>
-                <p>Trà ngon đậm vị, từ tằm gửi vị</p>
+    <!-- Món Đặc Tuyển (Signatures - Best Sellers) -->
+    <section class="signatures-section" id="signatures">
+        <div class="section-container">
+            <div class="section-header text-center">
+                <span class="section-sub">TINH TÚY NHÀ TẰM</span>
+                <h2 class="section-title">Thức Uống Đặc Tuyển</h2>
+                <div class="divider-knot" aria-hidden="true"><span>✦</span></div>
+                <p class="section-intro">
+                    Những món thức uống mang trọn linh hồn và tên tuổi của Tằm, được gìn giữ qua bao cữ pha chế công phu.
+                </p>
             </div>
 
-            <div class="footer-section">
-                <h3>Liên Hệ</h3>
-                <p>Email: hello@tam.vn</p>
-                <p>Phone: +84 9 XXXX XXXX</p>
-            </div>
+            <div class="signatures-grid">
+                <!-- Signature 1: Cà Phê Phin Tằm Mộc -->
+                <div class="signature-card">
+                    <div class="card-image-wrap">
+                        <img src="assets/phin-coffee.jpg" alt="Cà Phê Phin Tằm Mộc" class="card-img" loading="lazy">
+                        <span class="card-tag">Signature &bull; Mộc Bản</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-header-flex">
+                            <h3 class="card-name">Cà Phê Phin Tằm Mộc</h3>
+                            <span class="card-price">39.000₫</span>
+                        </div>
+                        <p class="card-desc">
+                            Robusta Đắk Lắk hái chín 100%, rang mộc củi nhãn truyền thống. Giọt cà phê sánh nâu nhỏ từng nhịp qua phin nhôm dày, hòa quyện chút sữa đặc ngọt bùi.
+                        </p>
+                        <div class="card-footer-flex">
+                            <span class="card-meta">✦ Đậm sâu &bull; Rang củi &bull; Hậu ngọt</span>
+                            <button class="btn-order-item" data-item="Cà Phê Phin Tằm Mộc">Thưởng vị</button>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="footer-section">
-                <h3>Mạng Xã Hội</h3>
-                <div class="social-icons">
-                    <a href="#" class="social-bubble">f</a>
-                    <a href="#" class="social-bubble">i</a>
-                    <a href="#" class="social-bubble">t</a>
-                    <a href="#" class="social-bubble">🔗</a>
+                <!-- Signature 2: Trà Dâu Tằm Mật Mía -->
+                <div class="signature-card highlight-card">
+                    <div class="card-image-wrap">
+                        <img src="assets/mulberry-tea.jpg" alt="Trà Dâu Tằm Mật Mía" class="card-img" loading="lazy">
+                        <span class="card-tag badge-red">Best Seller &bull; Độc Bản</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-header-flex">
+                            <h3 class="card-name">Trà Dâu Tằm Mật Mía</h3>
+                            <span class="card-price">45.000₫</span>
+                        </div>
+                        <p class="card-desc">
+                            Những quả dâu tằm chín mọng tím sẫm ngâm ủ cùng mật mía xứ Đoài sánh mịn và nước hãm lá dâu non. Vị chua ngọt thanh thoát, mát lành từng ngụm.
+                        </p>
+                        <div class="card-footer-flex">
+                            <span class="card-meta">✦ Chua ngọt &bull; Mật mía &bull; Thanh nhiệt</span>
+                            <button class="btn-order-item" data-item="Trà Dâu Tằm Mật Mía">Thưởng vị</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Signature 3: Trà Sen Bách Diệp Tơ Tằm -->
+                <div class="signature-card">
+                    <div class="card-image-wrap">
+                        <img src="assets/lotus-tea.jpg" alt="Trà Sen Bách Diệp Tơ Tằm" class="card-img" loading="lazy">
+                        <span class="card-tag">Tao Nhã &bull; Ấm Đất</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-header-flex">
+                            <h3 class="card-name">Trà Sen Bách Diệp Tơ Tằm</h3>
+                            <span class="card-price">52.000₫</span>
+                        </div>
+                        <p class="card-desc">
+                            Búp trà Shan Tuyết cổ thụ ướp gạo sen bách diệp Tây Hồ sớm tinh mơ. Hãm trong ấm đất nung Bát Tràng, hương sen tỏa ngát thiền tịnh, an yên cõi lòng.
+                        </p>
+                        <div class="card-footer-flex">
+                            <span class="card-meta">✦ Thanh khiết &bull; Sen Tây Hồ &bull; Ấm áp</span>
+                            <button class="btn-order-item" data-item="Trà Sen Bách Diệp Tơ Tằm">Thưởng vị</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="footer-bottom">
-            <p>&copy; 2026 Tằm - Trà Ngon Đậm Vị</p>
+    <!-- Toàn Bộ Thực Đơn Mộc (Full Rustic Menu) -->
+    <section class="menu-section" id="menu">
+        <div class="section-container">
+            <div class="section-header text-center">
+                <span class="section-sub">BẢN THỰC ĐƠN DÂN DÃ</span>
+                <h2 class="section-title">Thức Uống Nhà Tằm</h2>
+                <div class="divider-knot" aria-hidden="true"><span>✦</span></div>
+                <p class="section-intro">
+                    Chắt lọc nguyên liệu sạch từ vườn quê, nấu mới mỗi ngày theo phương pháp thủ công chân phương.
+                </p>
+            </div>
+
+            <!-- Menu Filter Categories -->
+            <div class="menu-filters" role="tablist" aria-label="Bộ lọc thức uống">
+                <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
+                    Tất Cả Món Mộc
+                </button>
+                <button class="filter-btn" data-filter="tea" role="tab" aria-selected="false">
+                    Trà Hương & Lá Dâu
+                </button>
+                <button class="filter-btn" data-filter="coffee" role="tab" aria-selected="false">
+                    Cà Phê Phin Gỗ
+                </button>
+                <button class="filter-btn" data-filter="folk" role="tab" aria-selected="false">
+                    Dân Dã Thanh Nhiệt
+                </button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="menu-items-grid">
+                <!-- Item 1 -->
+                <article class="drink-item-card" data-category="coffee">
+                    <div class="drink-seal-flag">Rang Củi</div>
+                    <div class="drink-content-wrap">
+                        <div class="drink-title-row">
+                            <h3 class="drink-item-name">Cà Phê Đen Phin Mộc</h3>
+                            <span class="drink-dots"></span>
+                            <span class="drink-item-price">32.000₫</span>
+                        </div>
+                        <p class="drink-item-desc">Hạt Robusta nguyên chất Đắk Lắk rang mộc, đắng đậm đà, thơm nồng củi nhãn, hậu vị ngọt sâu lắng.</p>
+                        <div class="drink-tag-pills">
+                            <span class="pill">Cà phê phin</span>
+                            <span class="pill">Không đường / Ít đá</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Item 2 -->
+                <article class="drink-item-card" data-category="coffee">
+                    <div class="drink-seal-flag flag-star">Khuyên Dùng</div>
+                    <div class="drink-content-wrap">
+                        <div class="drink-title-row">
+                            <h3 class="drink-item-name">Cà Phê Muối Nâu Nung</h3>
+                            <span class="drink-dots"></span>
+                            <span class="drink-item-price">42.000₫</span>
+                        </div>
+                        <p class="drink-item-desc">Cốt cà phê phin mộc đậm đà kết hợp lớp kem muối biển mịn màng thơm béo, dung hòa giữa vị đắng và mặn ngọt.</p>
+                        <div class="drink-tag-pills">
+                            <span class="pill">Kem muối biển</span>
+                            <span class="pill">Vị đượm béo</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Item 3 -->
+                <article class="drink-item-card" data-category="coffee">
+                    <div class="drink-seal-flag">Phố Xưa</div>
+                    <div class="drink-content-wrap">
+                        <div class="drink-title-row">
+                            <h3 class="drink-item-name">Bạc Xỉu Sữa Dừa Quê</h3>
+                            <span class="drink-dots"></span>
+                            <span class="drink-item-price">39.000₫</span>
+                        </div>
+                        <p class="drink-item-desc">Chút cà phê phin dạo đầu trên nền sữa đặc truyền thống và cốt dừa Bến Tre tươi béo ngậy, ngọt dịu ấm lòng.</p>
+                        <div class="drink-tag-pills">
+                            <span class="pill">Cốt dừa tươi</span>
+                            <span class="pill">Dịu nhẹ êm ái</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Item 4 -->
+                <article class="drink-item-card" data-category="tea">
+                    <div class="drink-seal-flag flag-special">Món Chữ Ký</div>
+                    <div class="drink-content-wrap">
+                        <div class="drink-title-row">
+                            <h3 class="drink-item-name">Trà Dâu Tằm Mật Mía</h3>
+                            <span class="drink-dots"></span>
+                            <span class="drink-item-price">45.000₫</span>
+                        </div>
+                        <p class="drink-item-desc">Dâu tằm chín mọng ngâm mật mía sánh vàng, hòa cùng nước hãm lá dâu non thanh mát, giải tỏa oi bức trưa hè.</p>
+                        <div class="drink-tag-pills">
+                            <span class="pill">Quả dâu tươi</span>
+                            <span class="pill">Mật mía nguyên chất</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Item 5 -->
+                <article class="drink-item-card" data-category="tea">
+                    <div class="drink-seal-flag">Hương Sen</div>
+                    <div class="drink-content-wrap">
+                        <div class="drink-title-row">
+                            <h3 class="drink-item-name">Trà Sen Bách Diệp Ấm Đất</h3>
+                            <span class="drink-dots"></span>
+                            <span class="drink-item-price">52.000₫</span>
+                        </div>
+                        <p class="drink-item-desc">Trà Shan Tuyết cổ thụ ướp gạo sen bách diệp hái sớm, ấm nồng trong chén đất nung mộc mạc, tĩnh tại an nhiên.</p>
+                        <div class="drink-tag-pills">
+                            <span class="pill">Sen Tây Hồ</span>
+                            <span class="pill">Ấm đất nung</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Item 6 -->
+                <article class="drink-item-card" data-category="tea">
+                    <div class="drink-seal-flag">Tiến Vua</div>
+                    <div class="drink-content-wrap">
+                        <div class="drink-title-row">
+                            <h3 class="drink-item-name">Trà Ô Long Dệt Hương Cúc</h3>
+                            <span class="drink-dots"></span>
+                            <span class="drink-item-price">46.000₫</span>
+                        </div>
+                        <p class="drink-item-desc">Trà ô long đồi cao ấp ủ cùng hoa cúc vàng tiến vua phơi nắng tự nhiên, vị chát ngọt dịu dàng lan tỏa cổ họng.</p>
+                        <div class="drink-tag-pills">
+                            <span class="pill">Hoa cúc chi</span>
+                            <span class="pill">Ô long đồi cao</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Item 7 -->
+                <article class="drink-item-card" data-category="folk">
+                    <div class="drink-seal-flag flag-star">Dưỡng Nhan</div>
+                    <div class="drink-content-wrap">
+                        <div class="drink-title-row">
+                            <h3 class="drink-item-name">Trà Gạo Lứt Kén Vàng</h3>
+                            <span class="drink-dots"></span>
+                            <span class="drink-item-price">38.000₫</span>
+                        </div>
+                        <p class="drink-item-desc">Gạo lứt huyết rồng rang củi phối cùng đỗ đen xanh lòng, thảo mộc an lành giúp thanh lọc cơ thể và ngủ ngon giấc.</p>
+                        <div class="drink-tag-pills">
+                            <span class="pill">Gạo lứt rang củi</span>
+                            <span class="pill">Thanh lọc nhẹ nhàng</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Item 8 -->
+                <article class="drink-item-card" data-category="folk">
+                    <div class="drink-seal-flag">Thanh Mát</div>
+                    <div class="drink-content-wrap">
+                        <div class="drink-title-row">
+                            <h3 class="drink-item-name">Sương Sáo Hạt Sen Long Nhãn</h3>
+                            <span class="drink-dots"></span>
+                            <span class="drink-item-price">40.000₫</span>
+                        </div>
+                        <p class="drink-item-desc">Thạch sương sáo lá tươi dẻo mịn kết hợp hạt sen ninh nhừ bùi ngậy và long nhãn Hưng Yên ngọt dịu nước đường phèn.</p>
+                        <div class="drink-tag-pills">
+                            <span class="pill">Hạt sen bùi béo</span>
+                            <span class="pill">Đường phèn thanh</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Không Gian Mộc Mạc & Chốn Bình Yên (#space) -->
+    <section class="space-section" id="space">
+        <div class="section-container">
+            <div class="space-layout">
+                <div class="space-text">
+                    <span class="section-sub">CHỐN AN TRÚ DÂN DÃ</span>
+                    <h2 class="section-title">Góc Nhỏ Bình Yên<br>Giữa Lòng Phố Thị</h2>
+                    <div class="divider-knot-left" aria-hidden="true"><span>✦</span></div>
+                    <p class="space-lead">
+                        Một khoảng sân gạch rêu phong, mái ngói sẫm màu, chiếc bàn gỗ mộc thô nhám cùng rèm mành tre che giọt nắng xiên.
+                    </p>
+                    <p class="space-p">
+                        Tại <strong>Tằm</strong>, chúng tôi muốn gìn giữ một không gian nơi bạn có thể cởi bỏ mọi âu lo hối hả. Ngồi nghe tiếng nước róc rách, hương khói trầm mộc thoang thoảng quyện cùng mùi cà phê phin mới nhỏ giọt, chuyện trò vài câu mộc mạc cùng người thương.
+                    </p>
+                    <div class="space-features">
+                        <div class="space-feat-item">
+                            <span class="feat-bullet">🪵</span>
+                            <span>Bàn gỗ mộc & ghế mây đan thủ công</span>
+                        </div>
+                        <div class="space-feat-item">
+                            <span class="feat-bullet">🎋</span>
+                            <span>Mành tre đón gió, giàn dâu rợp bóng mát</span>
+                        </div>
+                        <div class="space-feat-item">
+                            <span class="feat-bullet">📻</span>
+                            <span>Giai điệu mộc cổ điển, âm vang tiếng đàn tranh</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-visual-card">
+                    <div class="wooden-board-frame">
+                        <div class="board-header">
+                            <span class="board-seal">TẰM QUÁN</span>
+                            <span class="board-sub">Giờ mở cửa: 07:00 &mdash; 22:30</span>
+                        </div>
+                        <blockquote class="board-quote">
+                            &ldquo;Có những ngày chỉ mong được ngồi lặng thinh,<br>
+                            Tay nâng chén trà ấm, ngắm lá dâu rụng ngoài hiên.<br>
+                            Hương vị mộc mạc này, chính là chốn về của tâm hồn.&rdquo;
+                        </blockquote>
+                        <div class="board-footer">
+                            <img src="assets/logo-transparent.png" alt="Logo Tằm" class="board-logo" width="36" height="46">
+                            <span>Thêu Hương Dệt Vị &bull; Chân Tình Người Việt</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Liên Hệ & Ghé Tằm Thưởng Vị (#contact) -->
+    <section class="contact-section" id="contact">
+        <div class="section-container">
+            <div class="contact-parchment-box">
+                <div class="parchment-header text-center">
+                    <span class="seal-red-stamp">TẰM</span>
+                    <h2 class="parchment-title">Ghé Tằm Thưởng Vị</h2>
+                    <p class="parchment-sub">Chúng tôi luôn dành sẵn ấm trà thơm và góc bàn mộc chờ đón bạn ghé chơi.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info-col">
+                        <div class="info-block">
+                            <div class="info-icon">📍</div>
+                            <div>
+                                <h4>Địa Chỉ Quán Mộc</h4>
+                                <p>Số 18, Ngõ Cổ Tơ Tằm, Phố Hoài Niệm, Hà Nội</p>
+                                <small>(Có chỗ để xe máy & ô tô râm mát)</small>
+                            </div>
+                        </div>
+
+                        <div class="info-block">
+                            <div class="info-icon">🕰️</div>
+                            <div>
+                                <h4>Thời Gian Đón Khách</h4>
+                                <p>Thứ Hai &ndash; Chủ Nhật: 07:00 &ndash; 22:30</p>
+                                <small>(Nghỉ mùng 1 Tết Âm Lịch)</small>
+                            </div>
+                        </div>
+
+                        <div class="info-block">
+                            <div class="info-icon">📞</div>
+                            <div>
+                                <h4>Liên Hệ & Đặt Bàn Trước</h4>
+                                <p>Hotline: <strong>0988 123 456</strong></p>
+                                <p>Thư điện tử: <strong>hello@tam.vn</strong></p>
+                            </div>
+                        </div>
+
+                        <div class="social-links-rustic">
+                            <span class="social-label">Theo Dấu Tằm:</span>
+                            <a href="#" class="social-pill" title="Facebook Nhà Tằm">Facebook</a>
+                            <a href="#" class="social-pill" title="Instagram Nhà Tằm">Instagram</a>
+                            <a href="#" class="social-pill" title="Tiktok Nhà Tằm">Tiktok</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-col">
+                        <form id="reservationForm" class="rustic-form">
+                            <h3 class="form-title">Nhắn Gửi / Đặt Chỗ Ngồi</h3>
+                            
+                            <div class="form-group">
+                                <label for="custName">Họ và Tên bạn</label>
+                                <input type="text" id="custName" name="name" placeholder="Ví dụ: Nguyễn Văn An" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="custPhone">Số Điện Thoại</label>
+                                    <input type="tel" id="custPhone" name="phone" placeholder="09xx xxx xxx" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="custGuests">Số Lượng Khách</label>
+                                    <select id="custGuests" name="guests">
+                                        <option value="1">1 người (Tĩnh lặng)</option>
+                                        <option value="2" selected>2 người (Tâm tình)</option>
+                                        <option value="4">3 - 4 người (Bạn bè)</option>
+                                        <option value="6">5+ người (Gia đình)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="custNote">Lời nhắn hoặc món muốn chuẩn bị trước</label>
+                                <textarea id="custNote" name="note" rows="3" placeholder="Ví dụ: Bàn gần hiên ngắm cây dâu, 1 Trà dâu tằm & 1 Cà phê phin..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-submit-craft">
+                                <span>Gửi Lời Nhắn Đến Tằm</span>
+                                <span class="submit-seal">✦</span>
+                            </button>
+
+                            <div id="formSuccessMsg" class="form-success-msg" style="display: none;">
+                                🍃 Tằm đã nhận được lời nhắn của bạn! Chúng tôi sẽ chuẩn bị ấm trà ấm nồng đón bạn nhé.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chân Trang (Footer) -->
+    <footer class="rustic-footer">
+        <div class="footer-container">
+            <div class="footer-top-row">
+                <div class="footer-brand-col">
+                    <div class="footer-logo">
+                        <img src="assets/logo-transparent.png" alt="Tằm Logo" width="48" height="60">
+                        <div class="footer-brand-text">
+                            <span class="footer-name">tằm</span>
+                            <span class="footer-tagline">THÊU HƯƠNG DỆT VỊ</span>
+                        </div>
+                    </div>
+                    <p class="footer-philosophy">
+                        Gìn giữ nét đẹp mộc mạc và chân thành của nghệ thuật thưởng trà, cà phê phin truyền thống Việt Nam.
+                    </p>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4>Khám Phá</h4>
+                    <ul>
+                        <li><a href="#story">Chuyện Con Tằm</a></li>
+                        <li><a href="#philosophy">Đạo Mộc Bốn Chữ</a></li>
+                        <li><a href="#signatures">Món Đặc Tuyển</a></li>
+                        <li><a href="#menu">Thực Đơn Quán</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4>Món Tiêu Biểu</h4>
+                    <ul>
+                        <li><a href="#signatures">Cà Phê Phin Tằm Mộc</a></li>
+                        <li><a href="#signatures">Trà Dâu Tằm Mật Mía</a></li>
+                        <li><a href="#signatures">Trà Sen Bách Diệp</a></li>
+                        <li><a href="#menu">Cà Phê Muối Nâu Nung</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-seal-col">
+                    <div class="craft-seal-box">
+                        <span class="seal-large">蠶</span>
+                        <div class="seal-meta">
+                            <strong>MỘC BẢN GIA TRUYỀN</strong>
+                            <small>Từ Tằm Gửi Trọn Hương Vị</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom-row">
+                <p>&copy; 2026 TẰM &bull; THÊU HƯƠNG DỆT VỊ. Tất cả quyền được bảo lưu.</p>
+                <p class="footer-sub-text">Thiết kế mộc mạc &bull; Hồn cốt dân tộc &bull; Thuần khiết tự nhiên</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Leaves Effect Toggle Button -->
-    <button id="leavesToggleBtn" class="leaves-toggle-btn" aria-label="Bật/Tắt hiệu ứng lá tằm rơi"
-        title="Bật hoặc tạm dừng lá tằm rơi">
+    <!-- Nút Bật / Tắt Hiệu Ứng Lá Dâu Tằm & Tơ Vàng Rơi (Gió Tằm) -->
+    <button id="leavesToggleBtn" class="leaves-toggle-btn" aria-label="Bật hoặc tạm dừng làn gió lá tằm" title="Bật hoặc dừng hiệu ứng lá dâu tằm rơi">
         <span class="leaves-toggle-icon">🍃</span>
-        <span class="leaves-toggle-text">Lá tằm</span>
+        <span class="leaves-toggle-text">Gió Tằm</span>
     </button>
 
     <script src="script.js"></script>
