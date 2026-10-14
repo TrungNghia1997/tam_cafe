@@ -65,6 +65,10 @@ html {
     scroll-behavior: smooth;
 }
 
+section[id] {
+    scroll-margin-top: 85px;
+}
+
 body {
     font-family: var(--font-body);
     background-color: var(--bg-parchment);
@@ -581,7 +585,7 @@ body {
    CÂU CHUYỆN TẰM (BRAND MANIFESTO / STORY)
    ========================================================================== */
 .story-section {
-    padding: 5rem 0;
+    padding: 3.2rem 0;
     position: relative;
 }
 
@@ -591,7 +595,7 @@ body {
     background: var(--bg-card);
     border: 2px solid var(--border-craft);
     border-radius: 20px;
-    padding: 3.5rem 3rem;
+    padding: 2.4rem 2.8rem;
     box-shadow: var(--shadow-medium);
     position: relative;
     background-image: 
@@ -609,24 +613,24 @@ body {
 }
 
 .paper-scroll-wrapper::before {
-    top: 16px;
+    top: 14px;
 }
 
 .paper-scroll-wrapper::after {
-    bottom: 16px;
+    bottom: 14px;
 }
 
 .scroll-seal-top {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.1rem;
 }
 
 .stamp-box {
     display: inline-block;
     border: 2px solid var(--seal-red);
     color: var(--seal-red);
-    padding: 3px 12px;
-    font-size: 0.78rem;
+    padding: 2px 10px;
+    font-size: 0.74rem;
     font-weight: 800;
     letter-spacing: 2px;
     border-radius: 4px;
@@ -635,22 +639,22 @@ body {
 
 .story-title {
     font-family: var(--font-heading);
-    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-size: clamp(1.6rem, 3.2vw, 2.2rem);
     text-align: center;
     color: var(--wood-deep);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.1rem;
     line-height: 1.3;
 }
 
 .story-poem {
     font-family: var(--font-accent);
-    font-size: 1.35rem;
+    font-size: 1.22rem;
     font-style: italic;
     color: var(--wood-brand-dark);
     text-align: center;
-    line-height: 1.9;
-    margin-bottom: 2.2rem;
-    padding: 1.2rem 2rem;
+    line-height: 1.8;
+    margin-bottom: 1.4rem;
+    padding: 0.85rem 1.6rem;
     background: rgba(123, 95, 74, 0.05);
     border-radius: 12px;
     border-left: 3px solid var(--silk-gold);
@@ -658,26 +662,26 @@ body {
 }
 
 .story-body p {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--text-secondary);
-    line-height: 1.95;
-    margin-bottom: 1.25rem;
+    line-height: 1.8;
+    margin-bottom: 0.85rem;
     text-align: justify;
 }
 
 .story-signature {
-    margin-top: 2.5rem;
-    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1.1rem;
     border-top: 1px dashed var(--border-craft);
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.2rem;
 }
 
 .sig-title {
     font-family: var(--font-accent);
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-style: italic;
     color: var(--wood-brand-dark);
 }
@@ -686,7 +690,7 @@ body {
     border: 2px solid var(--seal-red);
     background: var(--seal-red-tint);
     color: var(--seal-red);
-    padding: 6px 14px;
+    padding: 5px 12px;
     border-radius: 6px;
     text-align: center;
     box-shadow: 0 2px 6px rgba(163, 51, 36, 0.15);
@@ -696,14 +700,14 @@ body {
     display: block;
     font-family: var(--font-heading);
     font-weight: 800;
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     letter-spacing: 2px;
     line-height: 1;
 }
 
 .sig-stamp small {
     display: block;
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     letter-spacing: 1px;
     margin-top: 2px;
 }
@@ -712,7 +716,7 @@ body {
    BỐN CHỮ TRIẾT LÝ: MỘC - TƠ - HƯƠNG - VỊ (#philosophy)
    ========================================================================== */
 .philosophy-section {
-    padding: 5.5rem 0;
+    padding: 3.5rem 0;
     background: var(--bg-cream);
     border-top: 1px solid var(--border-craft);
     border-bottom: 1px solid var(--border-craft);
@@ -720,7 +724,7 @@ body {
 
 .section-header {
     max-width: 680px;
-    margin: 0 auto 3.5rem;
+    margin: 0 auto 2.2rem;
 }
 
 .text-center {
@@ -729,18 +733,18 @@ body {
 
 .section-sub {
     font-family: var(--font-accent);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--silk-gold);
     letter-spacing: 3px;
     text-transform: uppercase;
     display: block;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.35rem;
 }
 
 .section-title {
     font-family: var(--font-heading);
-    font-size: clamp(2rem, 3.8vw, 2.7rem);
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
     color: var(--wood-deep);
     line-height: 1.3;
 }
@@ -749,9 +753,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1rem 0 1.25rem;
+    margin: 0.65rem 0 0.9rem;
     color: var(--silk-gold);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .divider-knot::before,
@@ -767,7 +771,7 @@ body {
 .divider-knot-left {
     display: flex;
     align-items: center;
-    margin: 0.8rem 0 1.2rem;
+    margin: 0.6rem 0 0.9rem;
     color: var(--silk-gold);
 }
 
@@ -781,22 +785,22 @@ body {
 }
 
 .section-intro {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     color: var(--text-secondary);
-    line-height: 1.8;
+    line-height: 1.75;
 }
 
 .philosophy-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    gap: 1.4rem;
 }
 
 .philosophy-card {
     background: var(--bg-card);
     border: 1px solid var(--border-craft);
     border-radius: 18px;
-    padding: 2.2rem 1.6rem;
+    padding: 1.8rem 1.4rem;
     position: relative;
     overflow: hidden;
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -830,7 +834,7 @@ body {
     background: rgba(123, 95, 74, 0.1);
     padding: 2px 8px;
     border-radius: 4px;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
     letter-spacing: 0.5px;
 }
 
@@ -841,17 +845,17 @@ body {
 
 .phil-title {
     font-family: var(--font-heading);
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     color: var(--wood-deep);
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.65rem;
     line-height: 1.3;
 }
 
 .phil-desc {
-    font-size: 0.94rem;
+    font-size: 0.92rem;
     color: var(--text-secondary);
-    line-height: 1.75;
-    margin-bottom: 1.4rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
 }
 
 .phil-list {
@@ -881,13 +885,13 @@ body {
    MÓN ĐẶC TUYỂN (SIGNATURES - BEST SELLERS)
    ========================================================================== */
 .signatures-section {
-    padding: 6rem 0;
+    padding: 3.5rem 0;
 }
 
 .signatures-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.2rem;
+    gap: 2rem;
 }
 
 .signature-card {
@@ -952,7 +956,7 @@ body {
 }
 
 .card-body {
-    padding: 1.8rem;
+    padding: 1.5rem 1.6rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -963,29 +967,29 @@ body {
     justify-content: space-between;
     align-items: baseline;
     gap: 1rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.6rem;
 }
 
 .card-name {
     font-family: var(--font-heading);
-    font-size: 1.35rem;
+    font-size: 1.3rem;
     color: var(--wood-deep);
     line-height: 1.3;
 }
 
 .card-price {
     font-family: var(--font-heading);
-    font-size: 1.35rem;
+    font-size: 1.3rem;
     font-weight: 800;
     color: var(--seal-red);
     white-space: nowrap;
 }
 
 .card-desc {
-    font-size: 0.94rem;
+    font-size: 0.92rem;
     color: var(--text-secondary);
-    line-height: 1.75;
-    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    margin-bottom: 1.1rem;
     flex-grow: 1;
 }
 
@@ -993,7 +997,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 1.1rem;
+    padding-top: 0.95rem;
     border-top: 1px dashed var(--border-light);
 }
 
@@ -1023,7 +1027,7 @@ body {
    TOÀN BỘ THỰC ĐƠN DÂN DÃ (#menu)
    ========================================================================== */
 .menu-section {
-    padding: 5.5rem 0;
+    padding: 3.5rem 0;
     background: var(--bg-cream);
     border-top: 1px solid var(--border-craft);
 }
@@ -1033,7 +1037,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 0.85rem;
-    margin-bottom: 3.5rem;
+    margin-bottom: 2.2rem;
     flex-wrap: wrap;
 }
 
@@ -1164,37 +1168,37 @@ body {
    KHÔNG GIAN MỘC MẠC (#space)
    ========================================================================== */
 .space-section {
-    padding: 6.5rem 0;
+    padding: 3.5rem 0;
     position: relative;
 }
 
 .space-layout {
     display: grid;
     grid-template-columns: 1.1fr 1fr;
-    gap: 4rem;
+    gap: 3.5rem;
     align-items: center;
 }
 
 .space-lead {
     font-family: var(--font-accent);
-    font-size: 1.3rem;
+    font-size: 1.22rem;
     font-style: italic;
     color: var(--wood-brand-dark);
-    line-height: 1.8;
-    margin-bottom: 1.25rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
 }
 
 .space-p {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--text-secondary);
-    line-height: 1.85;
-    margin-bottom: 2rem;
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
 }
 
 .space-features {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.85rem;
 }
 
 .space-feat-item {
@@ -1217,7 +1221,7 @@ body {
     color: var(--silk-ivory);
     border: 3px solid var(--wood-brand);
     border-radius: 24px;
-    padding: 3rem 2.5rem;
+    padding: 2.2rem 2.2rem;
     box-shadow: var(--shadow-deep);
     position: relative;
     background-image: 
@@ -1237,8 +1241,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
+    margin-bottom: 1.3rem;
+    padding-bottom: 0.8rem;
     border-bottom: 1px solid rgba(243, 233, 215, 0.15);
 }
 
@@ -1253,16 +1257,16 @@ body {
 }
 
 .board-sub {
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     color: rgba(243, 233, 215, 0.85);
 }
 
 .board-quote {
     font-family: var(--font-accent);
-    font-size: 1.45rem;
+    font-size: 1.3rem;
     font-style: italic;
-    line-height: 1.85;
-    margin-bottom: 2.5rem;
+    line-height: 1.75;
+    margin-bottom: 1.8rem;
     color: var(--silk-ivory);
 }
 
@@ -1285,7 +1289,7 @@ body {
    LIÊN HỆ & ĐẶT BÀN (#contact)
    ========================================================================== */
 .contact-section {
-    padding: 5.5rem 0;
+    padding: 3.5rem 0;
     background: var(--bg-cream);
     border-top: 1px solid var(--border-craft);
 }
@@ -1294,12 +1298,12 @@ body {
     background: var(--bg-card);
     border: 2px solid var(--border-craft);
     border-radius: 24px;
-    padding: 3.5rem;
+    padding: 2.4rem 2.8rem;
     box-shadow: var(--shadow-medium);
 }
 
 .parchment-header {
-    margin-bottom: 3.5rem;
+    margin-bottom: 2rem;
 }
 
 .seal-red-stamp {
@@ -1309,65 +1313,65 @@ body {
     font-family: var(--font-heading);
     font-size: 1.25rem;
     font-weight: 900;
-    width: 48px;
-    height: 48px;
-    line-height: 48px;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
     text-align: center;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(163, 51, 36, 0.3);
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 .parchment-title {
     font-family: var(--font-heading);
-    font-size: clamp(2rem, 3.5vw, 2.6rem);
+    font-size: clamp(1.8rem, 3.2vw, 2.4rem);
     color: var(--wood-deep);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 .parchment-sub {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--text-secondary);
 }
 
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
-    gap: 3.5rem;
+    gap: 3rem;
 }
 
 .contact-info-col {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.4rem;
 }
 
 .info-block {
     display: flex;
-    gap: 1.2rem;
+    gap: 1rem;
 }
 
 .info-icon {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     line-height: 1;
     margin-top: 2px;
 }
 
 .info-block h4 {
     font-family: var(--font-heading);
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     color: var(--wood-deep);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.2rem;
 }
 
 .info-block p {
-    font-size: 0.98rem;
+    font-size: 0.94rem;
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.55;
 }
 
 .info-block small {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     color: var(--text-muted);
 }
 
@@ -1376,7 +1380,7 @@ body {
     align-items: center;
     gap: 0.75rem;
     flex-wrap: wrap;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 .social-label {
@@ -1407,20 +1411,20 @@ body {
     background: rgba(248, 244, 236, 0.7);
     border: 1px solid var(--border-craft);
     border-radius: 18px;
-    padding: 2.2rem;
+    padding: 1.6rem 1.8rem;
 }
 
 .form-title {
     font-family: var(--font-heading);
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     color: var(--wood-deep);
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.75rem;
+    margin-bottom: 1.1rem;
+    padding-bottom: 0.6rem;
     border-bottom: 1px solid var(--border-light);
 }
 
 .form-group {
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.95rem;
 }
 
 .form-row {

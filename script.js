@@ -5,25 +5,69 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ===== 1. Điều Hướng Cuộn Mượt (Smooth Scroll với Offset Navbar) =====
+    // ===== 1. Hàm Cuộn Căn Giữa Khối Nội Dung (Không Bị Tràn Xuống Dưới) =====
     const navbarWrapper = document.querySelector('.navbar-wrapper');
-    const navLinks = document.querySelectorAll('.nav-link, a[href^="#"]');
 
-    navLinks.forEach(link => {
+    function scrollToContentCenter(targetElement) {
+        if (!targetElement) return;
+
+        const navHeight = navbarWrapper ? navbarWrapper.offsetHeight : 70;
+        const viewportHeight = window.innerHeight;
+        const availableHeight = viewportHeight - navHeight;
+
+        // Tìm khối nội dung cốt lõi của phần mục để căn giữa chính xác:
+        // - #story: .paper-scroll-wrapper
+        // - #space: .space-layout
+        // - #contact: .contact-parchment-box
+        // - các section khác: .section-container hoặc chính targetElement
+        const contentBox = targetElement.querySelector(
+            '.paper-scroll-wrapper, .space-layout, .contact-parchment-box, .section-container'
+        ) || targetElement;
+
+        const contentRect = contentBox.getBoundingClientRect();
+        const contentHeight = contentRect.height;
+        const contentTop = contentRect.top + window.pageYOffset;
+
+        let targetY;
+
+        // Nếu nội dung vừa vặn hoặc ngắn hơn chiều cao màn hình:
+        // Căn giữa nội dung hoàn hảo trong không gian giữa mép dưới navbar và đáy màn hình
+        if (contentHeight < availableHeight - 16) {
+            const verticalPadding = (availableHeight - contentHeight) / 2;
+            targetY = contentTop - navHeight - verticalPadding;
+        } else {
+            // Nếu nội dung dài hơn chiều cao màn hình (như danh sách thực đơn):
+            // Căn mép trên của khối nội dung sát mép dưới navbar (cách 12px) để người dùng
+            // xem ngay được phần đầu mà không bị khoảng trống phía trên đẩy tràn xuống dưới
+            targetY = contentTop - navHeight - 12;
+        }
+
+        // Giới hạn cuộn không vượt quá chiều dài trang
+        const maxScroll = Math.max(0, document.documentElement.scrollHeight - viewportHeight);
+        targetY = Math.max(0, Math.min(targetY, maxScroll));
+
+        window.scrollTo({
+            top: Math.round(targetY),
+            behavior: 'smooth'
+        });
+    }
+
+    // Lắng nghe sự kiện click trên toàn bộ liên kết neo (#)
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
-            if (!targetId || targetId === '#' || !targetId.startsWith('#')) return;
+            if (!targetId) return;
+
+            if (targetId === '#') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return;
+            }
 
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 e.preventDefault();
-                const navHeight = navbarWrapper ? navbarWrapper.offsetHeight : 70;
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
-
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+                scrollToContentCenter(targetElement);
             }
         });
     });
@@ -36,9 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
             navbarWrapper?.classList.remove('navbar-scrolled');
         }
 
-        // Cập nhật mục Menu đang xem (Active Nav Link)
+        // Cập nhật mục Menu đang xem (Active Nav Link) theo tâm màn hình
         const sections = document.querySelectorAll('section[id]');
-        const scrollPosition = window.scrollY + 120;
+        const midScreen = window.scrollY + (window.innerHeight - 70) / 2 + 70;
 
         sections.forEach(section => {
             const top = section.offsetTop;
@@ -46,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const id = section.getAttribute('id');
             const correspondingLink = document.querySelector(`.nav-link[href="#${id}"]`);
 
-            if (scrollPosition >= top && scrollPosition < top + height) {
+            if (midScreen >= top && midScreen < top + height) {
                 document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
                 correspondingLink?.classList.add('active');
             }
@@ -102,13 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (contactSection) {
-                const navHeight = navbarWrapper ? navbarWrapper.offsetHeight : 70;
-                const targetPosition = contactSection.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-                custNoteTextarea?.focus();
+                scrollToContentCenter(contactSection);
+                setTimeout(() => custNoteTextarea?.focus(), 400);
             }
         });
     });
