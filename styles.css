@@ -63,7 +63,7 @@
 
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    overflow-x: clip;
     -webkit-text-size-adjust: 100%;
 }
 
@@ -76,7 +76,7 @@ body {
     background-color: var(--bg-parchment);
     color: var(--text-primary);
     line-height: 1.7;
-    overflow-x: hidden;
+    overflow-x: clip;
     position: relative;
     width: 100%;
     min-width: 320px;
@@ -135,14 +135,18 @@ img, picture, video, canvas, svg {
    THANH ĐIỀU HƯỚNG (NAVBAR)
    ========================================================================== */
 .navbar-wrapper {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     z-index: 1000;
     background: rgba(248, 244, 236, 0.94);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-craft);
-    transition: all 0.35s ease;
+    transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .navbar-scrolled {
