@@ -56,10 +56,62 @@
                         <span class="btn-text">Đặt Chỗ</span>
                         <span class="btn-stamp" aria-hidden="true">TẰM</span>
                     </a>
+                    <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="mobileNavDrawer">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
                 </div>
             </div>
         </nav>
     </header>
+
+    <!-- Mobile Navigation Drawer & Backdrop (Mộc Mạc & Thân Thiện - Đặt ngoài header để không bị giới hạn z-index/backdrop-filter) -->
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop" aria-hidden="true"></div>
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menu điều hướng di động">
+        <div class="mobile-drawer-header">
+            <div class="drawer-brand">
+                <img src="assets/logo-brand.png" alt="Logo Tằm" class="drawer-logo-img" width="38" height="48">
+                <div class="drawer-brand-text">
+                    <span class="drawer-brand-name">tằm</span>
+                    <span class="drawer-brand-tagline">THÊU HƯƠNG DỆT VỊ</span>
+                </div>
+            </div>
+            <button type="button" class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Đóng menu">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <nav class="mobile-drawer-nav">
+            <ul class="mobile-nav-links">
+                <li><a href="#story" class="mobile-nav-link"><span class="m-link-seal">Chuyện</span><span class="m-link-text">Chuyện Mộc</span></a></li>
+                <li><a href="#philosophy" class="mobile-nav-link"><span class="m-link-seal">Đạo</span><span class="m-link-text">Bốn Chữ Vị</span></a></li>
+                <li><a href="#signatures" class="mobile-nav-link"><span class="m-link-seal">Tuyển</span><span class="m-link-text">Món Đặc Tuyển</span></a></li>
+                <li><a href="#menu" class="mobile-nav-link"><span class="m-link-seal">Thực</span><span class="m-link-text">Thực Đơn Quán</span></a></li>
+                <li><a href="#space" class="mobile-nav-link"><span class="m-link-seal">Chốn</span><span class="m-link-text">Không Gian Mộc</span></a></li>
+                <li><a href="#contact" class="mobile-nav-link"><span class="m-link-seal">Ghé</span><span class="m-link-text">Ghé Quán & Đặt Chỗ</span></a></li>
+            </ul>
+        </nav>
+        <div class="mobile-drawer-footer">
+            <a href="#contact" class="btn-wood-nav mobile-drawer-btn">
+                <span class="btn-text">Đặt Chỗ Trước</span>
+                <span class="btn-stamp" aria-hidden="true">TẰM</span>
+            </a>
+            <div class="drawer-quick-info">
+                <p class="drawer-info-row">
+                    <span class="d-icon">📍</span>
+                    <span>Số 18, Ngõ Cổ Tơ Tằm, Hà Nội</span>
+                </p>
+                <p class="drawer-info-row">
+                    <span class="d-icon">📞</span>
+                    <span>Hotline: <strong>0988 123 456</strong></span>
+                </p>
+                <p class="drawer-info-row">
+                    <span class="d-icon">🕰️</span>
+                    <span>07:00 &mdash; 22:30 mỗi ngày</span>
+                </p>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section: Không gian thưởng trà & cà phê mộc mạc -->
     <section class="hero-section" id="hero">

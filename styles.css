@@ -63,6 +63,8 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
 }
 
 section[id] {
@@ -76,10 +78,17 @@ body {
     line-height: 1.7;
     overflow-x: hidden;
     position: relative;
+    width: 100%;
+    min-width: 320px;
     /* Vân giấy dó mộc mạc phủ nhẹ */
     background-image: 
         radial-gradient(circle at 10% 20%, rgba(123, 95, 74, 0.03) 0%, transparent 40%),
         radial-gradient(circle at 90% 80%, rgba(194, 141, 53, 0.03) 0%, transparent 40%);
+}
+
+img, picture, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Bố cục container */
@@ -265,6 +274,290 @@ body {
     background: var(--wood-brand-dark);
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(123, 95, 74, 0.35);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* ==========================================================================
+   MENU ĐIỀU HƯỚNG DI ĐỘNG (MOBILE NAVIGATION DRAWER & TOGGLE)
+   ========================================================================== */
+.mobile-menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: rgba(123, 95, 74, 0.08);
+    border: 1.5px solid var(--border-craft);
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+    color: var(--wood-brand-dark);
+}
+
+.mobile-menu-toggle:hover {
+    background: rgba(123, 95, 74, 0.16);
+    border-color: var(--wood-brand);
+}
+
+.hamburger-box {
+    width: 22px;
+    height: 16px;
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    width: 22px;
+    height: 2px;
+    background-color: var(--wood-brand);
+    border-radius: 2px;
+    position: absolute;
+    transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.hamburger-inner {
+    top: 50%;
+    left: 1px;
+    transform: translateY(-50%);
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+    content: '';
+    left: 0;
+}
+
+.hamburger-inner::before {
+    top: -6px;
+}
+
+.hamburger-inner::after {
+    bottom: -6px;
+}
+
+/* Khi toggle active (mở) */
+.toggle-active .hamburger-inner {
+    background-color: transparent !important;
+}
+
+.toggle-active .hamburger-inner::before {
+    transform: translateY(6px) rotate(45deg);
+    background-color: var(--wood-deep) !important;
+}
+
+.toggle-active .hamburger-inner::after {
+    transform: translateY(-6px) rotate(-45deg);
+    background-color: var(--wood-deep) !important;
+}
+
+/* Lớp phủ mờ (Backdrop) */
+.mobile-nav-backdrop {
+    position: fixed;
+    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background: rgba(42, 26, 17, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.mobile-nav-backdrop.backdrop-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Ngăn kéo menu di động (Drawer) */
+.mobile-nav-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(340px, 86vw);
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100dvh;
+    background: var(--bg-parchment);
+    z-index: 9999;
+    box-shadow: -8px 0 30px rgba(42, 26, 17, 0.25);
+    border-left: 2px solid var(--border-craft);
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    background-image: 
+        radial-gradient(circle at 100% 0%, rgba(194, 141, 53, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 0% 100%, rgba(123, 95, 74, 0.06) 0%, transparent 40%);
+}
+
+.mobile-nav-drawer.drawer-open {
+    transform: translateX(0);
+}
+
+.mobile-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.4rem;
+    border-bottom: 1px solid var(--border-craft);
+    background: rgba(248, 244, 236, 0.8);
+}
+
+.drawer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.drawer-logo-img {
+    height: 40px;
+    width: auto;
+}
+
+.drawer-brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.drawer-brand-name {
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--wood-brand);
+}
+
+.drawer-brand-tagline {
+    font-size: 0.62rem;
+    letter-spacing: 1.5px;
+    color: var(--wood-brand-dark);
+    font-weight: 600;
+}
+
+.mobile-drawer-close {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid var(--border-craft);
+    background: var(--bg-card);
+    color: var(--wood-deep);
+    font-size: 1.5rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.mobile-drawer-close:hover {
+    background: var(--wood-brand);
+    color: var(--silk-ivory);
+    border-color: var(--wood-brand);
+}
+
+.mobile-drawer-nav {
+    flex: 1;
+    padding: 1.2rem 1rem;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.mobile-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    border: 1px solid transparent;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+    background: rgba(123, 95, 74, 0.1);
+    color: var(--wood-deep);
+    border-color: var(--border-craft);
+    transform: translateX(4px);
+}
+
+.m-link-seal {
+    font-size: 0.7rem;
+    font-weight: 800;
+    background: var(--seal-red-tint);
+    color: var(--seal-red);
+    padding: 2px 7px;
+    border-radius: 4px;
+    border: 1px solid rgba(163, 51, 36, 0.25);
+    letter-spacing: 0.5px;
+}
+
+.m-link-text {
+    flex: 1;
+}
+
+.mobile-drawer-footer {
+    padding: 1.4rem;
+    border-top: 1px solid var(--border-craft);
+    background: rgba(248, 244, 236, 0.7);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mobile-drawer-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.8rem 1.4rem;
+    font-size: 0.96rem;
+}
+
+.drawer-quick-info {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed var(--border-light);
+}
+
+.drawer-info-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.d-icon {
+    font-size: 0.95rem;
 }
 
 /* ==========================================================================
@@ -983,6 +1276,7 @@ body {
     font-weight: 800;
     color: var(--seal-red);
     white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .card-desc {
@@ -997,6 +1291,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
     padding-top: 0.95rem;
     border-top: 1px dashed var(--border-light);
 }
@@ -1125,6 +1421,8 @@ body {
     font-size: 1.25rem;
     color: var(--wood-deep);
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .drink-dots {
@@ -1139,6 +1437,7 @@ body {
     font-weight: 800;
     color: var(--seal-red);
     white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .drink-item-desc {
@@ -1723,107 +2022,443 @@ body {
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN (Tối Ưu Máy Tính Bảng & Điện Thoại)
+   RESPONSIVE DESIGN (Tương Thích Mọi Màn Hình - Chống Vỡ Co Kéo Giao Diện)
    ========================================================================== */
+
+/* --- 1. Màn Hình Lớn Vừa (max-width: 1200px) --- */
+@media (max-width: 1200px) {
+    .nav-links {
+        gap: 1.4rem;
+    }
+    
+    .nav-container,
+    .hero-container,
+    .section-container,
+    .footer-container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    
+    .hero-container {
+        gap: 2.5rem;
+    }
+    
+    .signatures-grid {
+        gap: 1.5rem;
+    }
+}
+
+/* --- 2. Máy Tính Bảng & Màn Hình Dưới 1024px --- */
 @media (max-width: 1024px) {
-    .philosophy-grid {
-        grid-template-columns: repeat(2, 1fr);
+    /* Chuyển Desktop Nav sang Mobile Drawer mượt mà */
+    .nav-links {
+        display: none;
     }
 
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    /* Hero section xếp chồng cân đối */
     .hero-container {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2.8rem;
+    }
+
+    .hero-text-col {
+        max-width: 680px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .seal-badge {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-highlights {
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2rem;
+    }
+
+    .hero-cta-group {
+        justify-content: center;
     }
 
     .hero-visual-col {
-        max-width: 600px;
+        max-width: 560px;
+        width: 100%;
         margin: 0 auto;
     }
 
-    .footer-top-row {
-        grid-template-columns: 1fr 1fr;
-        gap: 2.5rem;
+    /* Con dấu triện nằm gọn gàng bên trong không làm tràn màn hình */
+    .floating-seal {
+        right: 10px;
+        top: -16px;
     }
 
+    /* Philosophy grid: 2 cột rộng rãi */
+    .philosophy-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    /* Signatures grid: 2 cột cân đối, không bị chật */
+    .signatures-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    /* Space section: 1 cột xếp chồng đẹp mắt */
+    .space-layout {
+        grid-template-columns: 1fr;
+        gap: 2.8rem;
+    }
+
+    .space-visual-card {
+        max-width: 560px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* Contact section: 1 cột gọn gàng */
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
     }
 
-    .space-layout {
-        grid-template-columns: 1fr;
-        gap: 3rem;
+    .contact-info-col,
+    .contact-form-col {
+        max-width: 640px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    /* Footer: 2 cột */
+    .footer-top-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
     }
 }
 
+/* --- 3. Điện Thoại Dọc & Máy Tính Bảng Nhỏ (max-width: 768px) --- */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
+    .section-container,
+    .hero-container,
+    .nav-container,
+    .footer-container {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .hero-section {
+        padding: 2.8rem 0 3.8rem;
     }
 
     .signatures-grid {
         grid-template-columns: 1fr;
         max-width: 480px;
         margin: 0 auto;
+        gap: 1.5rem;
     }
 
     .menu-items-grid {
         grid-template-columns: 1fr;
+        gap: 1.25rem;
     }
 
     .hero-highlights {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 0.85rem;
+        padding: 1rem;
+        text-align: left;
     }
 
     .form-row {
         grid-template-columns: 1fr;
+        gap: 0;
     }
 
     .paper-scroll-wrapper {
-        padding: 2.5rem 1.5rem;
+        padding: 2.2rem 1.4rem;
     }
 
     .contact-parchment-box {
-        padding: 2rem 1.5rem;
+        padding: 2rem 1.3rem;
     }
 
     .footer-top-row {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .floating-seal {
+        right: 8px;
+        top: -16px;
     }
 }
 
-@media (max-width: 480px) {
-    .nav-container {
-        padding: 0.75rem 1.25rem;
+/* --- 4. Thiết Bị Di Động Thông Thường (max-width: 600px) --- */
+@media (max-width: 600px) {
+    .philosophy-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
     }
 
-    .brand-name {
-        font-size: 1.5rem;
+    .wooden-board-frame {
+        padding: 1.8rem 1.4rem;
+    }
+
+    .board-quote {
+        font-size: 1.15rem;
+        line-height: 1.65;
+    }
+
+    .story-poem {
+        font-size: 1.1rem;
+    }
+
+    .menu-filters {
+        gap: 0.5rem;
+    }
+
+    .filter-btn {
+        padding: 0.5rem 1.1rem;
+        font-size: 0.88rem;
+    }
+
+    .hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.85rem;
+    }
+
+    .btn-primary-craft,
+    .btn-secondary-craft {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* --- 5. Màn Hình Di Động Nhỏ (max-width: 480px) --- */
+@media (max-width: 480px) {
+    .section-container,
+    .hero-container,
+    .nav-container,
+    .footer-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .top-announcement {
+        font-size: 0.78rem;
+        padding: 0.45rem 0.75rem;
+    }
+
+    .brand-logo {
+        gap: 0.65rem;
     }
 
     .brand-img {
         height: 38px;
     }
 
-    .hero-section {
-        padding: 2.5rem 0 3.5rem;
+    .brand-name {
+        font-size: 1.45rem;
     }
 
-    .philosophy-grid {
-        grid-template-columns: 1fr;
+    .brand-tagline {
+        font-size: 0.6rem;
+        letter-spacing: 1.5px;
     }
 
+    /* Thu gọn nút đặt chỗ ở navbar để nhường chỗ cho logo và nút toggle */
+    .btn-wood-nav .btn-stamp {
+        display: none;
+    }
+
+    .btn-wood-nav {
+        padding: 0.45rem 0.9rem;
+        font-size: 0.82rem;
+    }
+
+    .mobile-menu-toggle {
+        width: 38px;
+        height: 38px;
+    }
+
+    .headline-main {
+        font-size: clamp(1.75rem, 6.8vw, 2.3rem);
+        line-height: 1.25;
+    }
+
+    .headline-sub {
+        font-size: 1.15rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-description {
+        font-size: 0.98rem;
+        line-height: 1.7;
+    }
+
+    /* Đảm bảo floating seal không làm lệch hoặc co kéo ảnh */
     .floating-seal {
         position: static;
         margin-top: 1rem;
         display: inline-flex;
+        width: auto;
+        box-shadow: var(--shadow-soft);
+    }
+
+    .craft-frame {
+        padding: 8px;
+        border-radius: 20px;
+    }
+
+    .craft-overlay-tag {
+        bottom: 8px;
+        left: 8px;
+        right: 8px;
+        padding: 0.65rem 0.85rem;
+    }
+
+    .tag-title {
+        font-size: 0.92rem;
+    }
+
+    .tag-desc {
+        font-size: 0.76rem;
+    }
+
+    /* Tối ưu thẻ đồ uống trong thực đơn: chống vỡ dòng */
+    .drink-item-card {
+        padding: 1.25rem 1rem;
+    }
+
+    .drink-title-row {
+        flex-wrap: wrap;
+        gap: 0.35rem 0.5rem;
+    }
+
+    .drink-item-name {
+        font-size: 1.1rem;
+        white-space: normal;
+        word-break: break-word;
+        flex: 1 1 auto;
+    }
+
+    .drink-dots {
+        display: none;
+    }
+
+    .drink-item-price {
+        font-size: 1.15rem;
+        margin-left: auto;
+    }
+
+    .drink-seal-flag {
+        top: -6px;
+        right: 14px;
+        font-size: 0.66rem;
+        padding: 2px 7px;
+    }
+
+    /* Tối ưu form và scroll parchment */
+    .paper-scroll-wrapper {
+        padding: 1.8rem 1rem;
+        border-radius: 16px;
+    }
+
+    .story-title {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+
+    .contact-parchment-box {
+        padding: 1.6rem 0.9rem;
+        border-radius: 18px;
+    }
+
+    .rustic-form {
+        padding: 1.2rem 0.85rem;
+    }
+
+    .parchment-title {
+        font-size: 1.6rem;
+    }
+
+    .social-links-rustic {
+        gap: 0.5rem;
+    }
+
+    .social-pill {
+        padding: 0.35rem 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    .craft-seal-box {
+        padding: 1.1rem;
+    }
+
+    .seal-large {
+        width: 44px;
+        height: 44px;
+        font-size: 1.8rem;
+    }
+
+    .footer-bottom-row {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
     }
 
     .leaves-toggle-btn {
-        bottom: 16px;
-        right: 16px;
-        padding: 7px 14px;
+        bottom: 14px;
+        right: 14px;
+        padding: 6px 12px;
+        font-size: 0.76rem;
+    }
+}
+
+/* --- 6. Màn Hình Siêu Nhỏ (max-width: 360px) --- */
+@media (max-width: 360px) {
+    .brand-name {
+        font-size: 1.3rem;
+    }
+
+    .brand-tagline {
+        display: none; /* Ẩn tagline trên màn hình cực hẹp dưới 360px */
+    }
+
+    .brand-img {
+        height: 32px;
+    }
+
+    .btn-wood-nav {
+        padding: 0.4rem 0.7rem;
         font-size: 0.78rem;
+    }
+
+    .headline-main {
+        font-size: 1.55rem;
+    }
+
+    .section-title {
+        font-size: 1.55rem;
+    }
+
+    .paper-scroll-wrapper,
+    .contact-parchment-box {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
     }
 }

@@ -72,7 +72,62 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ===== 2. Thanh Điều Hướng Đổi Bóng Khi Cuộn =====
+    // ===== 2. Menu Điều Hướng Di Động (Mobile Drawer) =====
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+    const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
+    const mobileDrawerClose = document.getElementById('mobileDrawerClose');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-drawer-btn');
+
+    function openMobileMenu() {
+        if (!mobileNavDrawer) return;
+        mobileNavDrawer.classList.add('drawer-open');
+        mobileNavBackdrop?.classList.add('backdrop-open');
+        mobileMenuToggle?.classList.add('toggle-active');
+        mobileMenuToggle?.setAttribute('aria-expanded', 'true');
+        mobileNavDrawer?.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+        if (!mobileNavDrawer) return;
+        mobileNavDrawer.classList.remove('drawer-open');
+        mobileNavBackdrop?.classList.remove('backdrop-open');
+        mobileMenuToggle?.classList.remove('toggle-active');
+        mobileMenuToggle?.setAttribute('aria-expanded', 'false');
+        mobileNavDrawer?.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', () => {
+            const isOpen = mobileNavDrawer?.classList.contains('drawer-open');
+            if (isOpen) closeMobileMenu();
+            else openMobileMenu();
+        });
+    }
+
+    if (mobileDrawerClose) {
+        mobileDrawerClose.addEventListener('click', closeMobileMenu);
+    }
+
+    if (mobileNavBackdrop) {
+        mobileNavBackdrop.addEventListener('click', closeMobileMenu);
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileNavDrawer?.classList.contains('drawer-open')) {
+            closeMobileMenu();
+        }
+    });
+
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            closeMobileMenu();
+        });
+    });
+
+    // ===== 3. Thanh Điều Hướng Đổi Bóng Khi Cuộn & Theo Dõi Vị Trí (Scroll Spy) =====
     window.addEventListener('scroll', () => {
         if (window.scrollY > 40) {
             navbarWrapper?.classList.add('navbar-scrolled');
@@ -89,10 +144,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const height = section.offsetHeight;
             const id = section.getAttribute('id');
             const correspondingLink = document.querySelector(`.nav-link[href="#${id}"]`);
+            const correspondingMobileLink = document.querySelector(`.mobile-nav-link[href="#${id}"]`);
 
             if (midScreen >= top && midScreen < top + height) {
-                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(l => l.classList.remove('active'));
                 correspondingLink?.classList.add('active');
+                correspondingMobileLink?.classList.add('active');
             }
         });
     }, { passive: true });
